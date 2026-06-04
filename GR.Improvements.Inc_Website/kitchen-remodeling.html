@@ -260,34 +260,9 @@
       <div class="text-center max-w-[520px] mx-auto mb-12">
         <p class="text-[11px] font-body font-semibold tracking-[0.15em] uppercase text-or mb-3">Portfolio</p>
         <h2 class="font-heading font-bold text-[34px] text-t800 leading-tight tracking-[-0.02em]">Our Kitchen Work</h2>
-        <p class="text-[15px] text-t700/65 mt-3 leading-[1.7]">Real projects, real results. Photos coming soon — these will be replaced with our actual work.</p>
+        <p class="text-[15px] text-t700/65 mt-3 leading-[1.7]">Real projects, real results — click any project to see the full photo gallery.</p>
       </div>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        <div class="photo-card rounded-[4px] overflow-hidden shadow-card bg-white">
-          <div class="overflow-hidden"><img src="https://placehold.co/600x400/1A3D50/E6F4F8?text=Kitchen+Project+1" alt="Kitchen project 1" class="w-full h-56 object-cover" /></div>
-          <div class="p-4"><p class="font-heading font-semibold text-[14px] text-t800">Kitchen Remodel — Silver Spring, MD</p></div>
-        </div>
-        <div class="photo-card rounded-[4px] overflow-hidden shadow-card bg-white">
-          <div class="overflow-hidden"><img src="https://placehold.co/600x400/1E5068/A8DCE8?text=Kitchen+Project+2" alt="Kitchen project 2" class="w-full h-56 object-cover" /></div>
-          <div class="p-4"><p class="font-heading font-semibold text-[14px] text-t800">Full Kitchen Gut — Rockville, MD</p></div>
-        </div>
-        <div class="photo-card rounded-[4px] overflow-hidden shadow-card bg-white">
-          <div class="overflow-hidden"><img src="https://placehold.co/600x400/267A94/E6F4F8?text=Kitchen+Project+3" alt="Kitchen project 3" class="w-full h-56 object-cover" /></div>
-          <div class="p-4"><p class="font-heading font-semibold text-[14px] text-t800">Cabinet Refresh — Bethesda, MD</p></div>
-        </div>
-        <div class="photo-card rounded-[4px] overflow-hidden shadow-card bg-white">
-          <div class="overflow-hidden"><img src="https://placehold.co/600x400/2E8FA5/E6F4F8?text=Kitchen+Project+4" alt="Kitchen project 4" class="w-full h-56 object-cover" /></div>
-          <div class="p-4"><p class="font-heading font-semibold text-[14px] text-t800">Open-Concept Kitchen — DC</p></div>
-        </div>
-        <div class="photo-card rounded-[4px] overflow-hidden shadow-card bg-white">
-          <div class="overflow-hidden"><img src="https://placehold.co/600x400/1A3D50/4AACBE?text=Kitchen+Project+5" alt="Kitchen project 5" class="w-full h-56 object-cover" /></div>
-          <div class="p-4"><p class="font-heading font-semibold text-[14px] text-t800">Modern Kitchen — Potomac, MD</p></div>
-        </div>
-        <div class="photo-card rounded-[4px] overflow-hidden shadow-card bg-white">
-          <div class="overflow-hidden"><img src="https://placehold.co/600x400/0F2D3D/4AACBE?text=Kitchen+Project+6" alt="Kitchen project 6" class="w-full h-56 object-cover" /></div>
-          <div class="p-4"><p class="font-heading font-semibold text-[14px] text-t800">Countertop & Backsplash — Gaithersburg, MD</p></div>
-        </div>
-      </div>
+      <div id="service-gallery" data-service-slug="kitchen-remodeling" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
     </div>
   </section>
 
@@ -351,6 +326,8 @@
     </div>
   </div>
 </footer>
+
+<script src="gallery-api.js"></script>
 
 <!-- EXPAND MODAL -->
 <div id="expand-modal" class="fixed inset-0 z-[200] hidden" role="dialog" aria-modal="true" aria-label="Before & After Slider">
