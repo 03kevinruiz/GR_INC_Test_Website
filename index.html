@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GR Inc. Improvements — Built Right. Built to Last.</title>
+  <meta name="description" content="Expert remodeling and construction services for homeowners across DC and Maryland. Kitchens, bathrooms, basements, and more. Free estimates." />
+
+  <!-- Fonts: Montserrat (headings) + Open Sans (body) + Roboto Mono (labels) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230F2D3D'/><text x='16' y='22' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='14' fill='%23E8730A'>GR</text></svg>">
+  <link rel="apple-touch-icon" href="brand_assets/GR_Improvements_Logo.PNG" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Open+Sans:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            't900': '#0F2D3D',
+            't800': '#1A3D50',
+            't700': '#1E5068',
+            't600': '#267A94',
+            't500': '#2E8FA5',
+            't400': '#4AACBE',
+            't200': '#A8DCE8',
+            't100': '#E6F4F8',
+            'or':   '#E8730A',
+            'or-aa':'#AC5408','or-lt':'#F48A20','or-dk':'#9C4E08',
+          },
+          fontFamily: {
+            heading: ['Montserrat', 'sans-serif'],
+            body:    ['Open Sans', 'sans-serif'],
+            mono:    ['Roboto Mono', 'monospace'],
+          },
+          boxShadow: {
+            'card':   '0 2px 12px rgba(15,45,61,0.08)',
+            'card-lg':'0 8px 32px rgba(15,45,61,0.14)',
+            'or':     '0 4px 20px rgba(232,115,10,0.30)',
+            'teal':   '0 4px 20px rgba(46,143,165,0.28)',
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Open Sans', sans-serif; color: #1A3D50; line-height: 1.6; }
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; }
+
+    /* ── Grain texture ─────────────────────────────────────── */
+    .grain::after {
+      content: '';
+      position: absolute; inset: 0; pointer-events: none;
+      opacity: 0.03;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    /* ── Nav link underline ────────────────────────────────── */
+    .nl { position: relative; text-shadow: -1px -1px 0 rgba(255,255,255,0.8), 1px -1px 0 rgba(255,255,255,0.8), -1px 1px 0 rgba(255,255,255,0.8), 1px 1px 0 rgba(255,255,255,0.8); }
+    .nl::after {
+      content: ''; position: absolute; bottom: -2px; left: 0; right: 0;
+      height: 2px; background: #2E8FA5;
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.22s cubic-bezier(0.4,0,0.2,1);
+    }
+    .nl:hover::after { transform: scaleX(1); }
+
+    /* ── Service card accent ───────────────────────────────── */
+    .svc { position: relative; overflow: hidden; }
+    .svc::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #2E8FA5, #4AACBE);
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.26s cubic-bezier(0.4,0,0.2,1);
+    }
+    .svc:hover::before { transform: scaleX(1); }
+
+    /* ── Process connector (3 steps) ──────────────────────── */
+    @media (min-width: 1024px) {
+      .proc-row::before {
+        content: ''; position: absolute; top: 40px;
+        left: calc(16.67% + 40px); right: calc(16.67% + 40px);
+        height: 2px;
+        background: linear-gradient(90deg, #2E8FA5, #E8730A);
+      }
+    }
+
+    /* ── Testimonial card quote mark ───────────────────────── */
+    .tcard::before {
+      content: '"';
+      position: absolute; top: -8px; left: 20px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 80px; line-height: 1;
+      color: #2E8FA5; opacity: 0.18;
+      font-weight: 800;
+    }
+
+    /* ── Focus visible ─────────────────────────────────────── */
+    *:focus-visible { outline: 2px solid #2E8FA5; outline-offset: 3px; border-radius: 3px; }
+
+    /* ── Scrollbar ─────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: #E6F4F8; }
+    ::-webkit-scrollbar-thumb { background: #2E8FA5; border-radius: 3px; }
+
+    /* ── Fade-up animation ─────────────────────────────────── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) both; }
+    .delay-1 { animation-delay: 0.1s; }
+    .delay-2 { animation-delay: 0.22s; }
+    .delay-3 { animation-delay: 0.34s; }
+    .delay-4 { animation-delay: 0.46s; }
+
+    /* ── Scroll reveal ─────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.65s cubic-bezier(0.22,1,0.36,1),
+                  transform 0.65s cubic-bezier(0.22,1,0.36,1);
+    }
+    .reveal.in-view { opacity: 1; transform: translateY(0); }
+    .rd1 { transition-delay: 0.07s; }
+    .rd2 { transition-delay: 0.15s; }
+    .rd3 { transition-delay: 0.23s; }
+    .rd4 { transition-delay: 0.31s; }
+    .rd5 { transition-delay: 0.39s; }
+    .rd6 { transition-delay: 0.47s; }
+
+    /* ── Service card cursor + learn-more arrow ────────────── */
+    .svc { cursor: pointer; }
+    .svc .arrow { display: inline-block; transition: transform 0.2s cubic-bezier(0.4,0,0.2,1); }
+    .svc:hover .arrow { transform: translateX(4px); }
+
+    /* ── prefers-reduced-motion ────────────────────────────── */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      .reveal, .fade-up { opacity: 1 !important; transform: none !important; }
+    }
+  </style>
+</head>
+<body class="antialiased">
+
+<!-- ══════════════════════════════════════════════
+     HEADER
+══════════════════════════════════════════════ -->
+<header id="hdr"
+  class="sticky top-0 z-50 bg-white/96 backdrop-blur-sm border-b border-t100
+         transition-shadow duration-300">
+  <div class="max-w-[1200px] mx-auto px-6 flex items-center justify-between h-[70px] gap-6">
+
+    <a href="#" class="flex-shrink-0">
+      <img src="brand_assets/GR_Improvements_Logo.PNG"
+           alt="GR Inc. Improvements"
+           class="h-[52px] w-auto" />
+    </a>
+
+    <!-- Desktop nav -->
+    <nav class="hidden lg:flex items-center gap-1 font-heading font-semibold text-[13.5px]">
+      <a href="#services" class="nl px-3.5 py-2 text-t700 hover:text-t500 transition-colors duration-200">Services</a>
+      <a href="#process"  class="nl px-3.5 py-2 text-t700 hover:text-t500 transition-colors duration-200">How We Work</a>
+      <a href="#work"     class="nl px-3.5 py-2 text-t700 hover:text-t500 transition-colors duration-200">Our Work</a>
+      <a href="#contact"
+         class="ml-3 px-5 py-2.5 bg-or-aa text-white rounded-[4px] font-bold
+                hover:bg-or-dk hover:shadow-or
+                active:scale-[0.97]
+                transition-[background-color,box-shadow,transform] duration-200">
+        Free Estimate
+      </a>
+    </nav>
+
+    <!-- Mobile toggle -->
+    <button id="mb-btn"
+      class="lg:hidden p-2 rounded-[4px] text-t800
+             hover:bg-t100 active:scale-95
+             transition-[background-color,transform] duration-150"
+      aria-label="Toggle menu" aria-expanded="false">
+      <svg id="mb-open"  class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 6h18M3 12h18M3 18h18"/></svg>
+      <svg id="mb-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div id="mb-nav" class="hidden lg:hidden border-t border-t100 bg-white">
+    <nav class="max-w-[1200px] mx-auto px-6 py-4 flex flex-col gap-1 font-heading font-semibold text-sm">
+      <a href="#services" class="px-3 py-3 rounded-[4px] text-t700 hover:text-t500 hover:bg-t100 transition-colors duration-200">Services</a>
+      <a href="#process"  class="px-3 py-3 rounded-[4px] text-t700 hover:text-t500 hover:bg-t100 transition-colors duration-200">How We Work</a>
+      <a href="#work"     class="px-3 py-3 rounded-[4px] text-t700 hover:text-t500 hover:bg-t100 transition-colors duration-200">Our Work</a>
+      <a href="#contact"
+         class="mt-2 px-4 py-3 text-center bg-or-aa text-white rounded-[4px] font-bold
+                hover:bg-or-dk active:scale-[0.98]
+                transition-[background-color,transform] duration-200">
+        Get a Free Estimate
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+══════════════════════════════════════════════ -->
+<section id="home"
+  class="grain relative bg-t800 overflow-hidden py-20 lg:py-28">
+
+  <div class="relative z-10 max-w-[1200px] mx-auto px-6 w-full
+              grid lg:grid-cols-[1fr_440px] lg:gap-14 lg:items-center">
+
+    <!-- Copy -->
+    <div>
+      <p class="fade-up font-mono text-[11px] font-medium tracking-[0.16em] uppercase text-or-lt mb-5">
+        REMODELING &amp; HOME IMPROVEMENT &nbsp;·&nbsp; DC &amp; MARYLAND
+      </p>
+
+      <h1 class="fade-up delay-1 font-heading font-extrabold leading-[1.06] tracking-[-0.03em]
+                 text-[42px] md:text-[52px] lg:text-[58px] text-white mb-6">
+        Built right,<br>the first time.
+      </h1>
+
+      <p class="fade-up delay-2 text-[16px] leading-[1.8] text-white/70 mb-10 max-w-[480px]">
+        Full-service remodeling for kitchens, bathrooms, basements, and more — from a licensed contractor with 35+ years turning homes into the spaces people actually want to live in.
+      </p>
+
+      <div class="fade-up delay-3 flex flex-wrap gap-4">
+        <a href="#contact"
+           class="px-8 py-4 bg-or-aa text-white font-heading font-bold rounded-[4px] text-[15px]
+                  hover:bg-or-dk hover:shadow-or
+                  active:scale-[0.97]
+                  transition-[background-color,box-shadow,transform] duration-200">
+          Get a Free Estimate
+        </a>
+        <a href="tel:+13013431365"
+           class="px-8 py-4 border-2 border-white/25 text-white font-heading font-bold rounded-[4px] text-[15px]
+                  hover:bg-white/10 hover:border-white/45
+                  active:scale-[0.97]
+                  transition-[background-color,border-color,transform] duration-200">
+          Call (301) 343-1365
+        </a>
+      </div>
+    </div>
+
+    <!-- Photo slot panel (future: drop an <img> here to cover the gradient) -->
+    <div class="hidden lg:block fade-up delay-2 mt-10 lg:mt-0">
+      <div class="relative rounded-2xl overflow-hidden" style="min-height: 400px;">
+
+        <!-- Decorative gradient background (aria-hidden — no information) -->
+        <div aria-hidden="true"
+             style="position:absolute;inset:0;
+                    background:linear-gradient(135deg,#1A3D50 0%,#267A94 55%,#4AACBE 100%);"></div>
+
+        <!-- Decorative diagonal stripe overlay (aria-hidden) -->
+        <div aria-hidden="true"
+             style="position:absolute;inset:0;opacity:0.06;
+                    background:repeating-linear-gradient(-45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);
+                    background-size:24px 24px;"></div>
+
+        <!-- Credential card — NOT aria-hidden; screen readers must see this -->
+        <div class="absolute bottom-0 left-0 right-0 p-5">
+          <div class="bg-white rounded-[4px] p-5 shadow-card-lg">
+            <p class="font-mono text-[13px] font-medium text-or-aa leading-none">MHIC #132077</p>
+            <!-- DC_LICENSE_PENDING: replace "pending" with the real DC Basic Business License number before launch. DO NOT DEPLOY with the placeholder visible. -->
+            <p class="font-mono text-[13px] font-medium text-or-aa leading-none mt-0.5">DC License # — pending</p>
+            <p class="font-heading font-bold text-[16px] text-t900 mt-1.5">Licensed &amp; Insured</p>
+            <p class="text-[12.5px] text-t800/55 mt-1 leading-snug">
+              Serving Washington DC &amp; Maryland &middot; Free estimates
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     TRUST BAR
+══════════════════════════════════════════════ -->
+<div class="bg-t900">
+  <div class="max-w-[1200px] mx-auto px-6 py-8
+              grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+
+    <div class="reveal text-center">
+      <div class="font-heading font-extrabold text-[28px] leading-none text-or-lt">35+</div>
+      <div class="text-[11.5px] text-white/55 mt-1.5 font-body leading-snug">Years of experience</div>
+    </div>
+
+    <div class="reveal rd1 text-center">
+      <div class="font-heading font-bold text-[15px] leading-tight text-white">Licensed &amp; Insured</div>
+      <div class="text-[11.5px] text-white/55 mt-1.5 font-mono">MHIC #132077</div>
+      <!-- DC_LICENSE_PENDING: replace "pending" with the real DC Basic Business License number before launch. DO NOT DEPLOY with the placeholder visible. -->
+      <div class="text-[11.5px] text-white/55 mt-0.5 font-mono">DC License # — pending</div>
+    </div>
+
+    <div class="reveal rd2 text-center">
+      <div class="font-heading font-extrabold text-[22px] leading-none text-or-lt">DC &amp; MD</div>
+      <div class="text-[11.5px] text-white/55 mt-1.5 font-body leading-snug">Service area</div>
+    </div>
+
+    <div class="reveal rd3 text-center">
+      <div class="font-heading font-extrabold text-[28px] leading-none text-or-lt">Free</div>
+      <div class="text-[11.5px] text-white/55 mt-1.5 font-body leading-snug">Estimates</div>
+    </div>
+
+    <div class="reveal rd4 text-center col-span-2 sm:col-span-1">
+      <div class="font-heading font-extrabold text-[28px] leading-none text-or-lt">100%</div>
+      <div class="text-[11.5px] text-white/55 mt-1.5 font-body leading-snug">Customer satisfaction</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     SERVICES
+══════════════════════════════════════════════ -->
+<section id="services" class="py-20 md:py-[80px] bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+
+    <div class="reveal text-center max-w-[620px] mx-auto mb-16">
+      <p class="text-[11px] font-body font-semibold tracking-[0.15em] uppercase text-or-aa mb-3">What We Do</p>
+      <h2 class="font-heading font-bold text-[36px] text-t800 leading-tight tracking-[-0.02em] mb-4">
+        Whole-home remodeling, under one roof
+      </h2>
+      <p class="text-[16px] leading-[1.75] text-t600/70">
+        One licensed contractor for the whole project — no juggling trades, no gaps between them.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <a href="kitchen-remodeling.html" class="svc reveal rd1 block border border-t100 rounded-[4px] p-8
+                  hover:-translate-y-1 hover:shadow-card-lg hover:border-transparent
+                  transition-[transform,box-shadow,border-color] duration-250">
+        <div class="w-12 h-12 bg-t100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-t500" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-[19px] text-t800 mb-2.5">Kitchen Remodeling</h3>
+        <p class="text-[14.5px] leading-[1.7] text-t700/65">Custom cabinetry, countertops, full layout redesigns, and premium finishes built for how you actually cook and live.</p>
+        <p class="mt-4 text-[13px] font-heading font-semibold text-t500 flex items-center gap-1">Learn more <span aria-hidden="true" class="arrow">→</span></p>
+      </a>
+
+      <a href="bathroom-renovation.html" class="svc reveal rd2 block border border-t100 rounded-[4px] p-8
+                  hover:-translate-y-1 hover:shadow-card-lg hover:border-transparent
+                  transition-[transform,box-shadow,border-color] duration-250">
+        <div class="w-12 h-12 bg-t100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-t500" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09Z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-[19px] text-t800 mb-2.5">Bathroom Renovation</h3>
+        <p class="text-[14.5px] leading-[1.7] text-t700/65">Modern tile work, vanity installs, walk-in showers, and spa-like finishes that transform your daily routine.</p>
+        <p class="mt-4 text-[13px] font-heading font-semibold text-t500 flex items-center gap-1">Learn more <span aria-hidden="true" class="arrow">→</span></p>
+      </a>
+
+      <a href="basement-finishing.html" class="svc reveal rd3 block border border-t100 rounded-[4px] p-8
+                  hover:-translate-y-1 hover:shadow-card-lg hover:border-transparent
+                  transition-[transform,box-shadow,border-color] duration-250">
+        <div class="w-12 h-12 bg-t100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-t500" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-[19px] text-t800 mb-2.5">Basement Finishing</h3>
+        <p class="text-[14.5px] leading-[1.7] text-t700/65">Convert unused space into a home office, rec room, gym, or in-law suite — fully finished and code-compliant.</p>
+        <p class="mt-4 text-[13px] font-heading font-semibold text-t500 flex items-center gap-1">Learn more <span aria-hidden="true" class="arrow">→</span></p>
+      </a>
+
+      <a href="painting.html" class="svc reveal rd4 block border border-t100 rounded-[4px] p-8
+                  hover:-translate-y-1 hover:shadow-card-lg hover:border-transparent
+                  transition-[transform,box-shadow,border-color] duration-250">
+        <div class="w-12 h-12 bg-t100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-t500" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128 2.25 2.25 0 0 1-2.4 2.245 4.5 4.5 0 0 0 8.4-2.245c0-.399-.078-.78-.22-1.128Zm0 0a15.998 15.998 0 0 0 3.388-1.62m-5.043-.025a15.994 15.994 0 0 1 1.622-3.395m3.42 3.42a15.995 15.995 0 0 0 4.764-4.648l3.876-5.814a1.151 1.151 0 0 0-1.597-1.597L14.146 6.32a15.996 15.996 0 0 0-4.649 4.763m3.42 3.42a6.776 6.776 0 0 0-3.42-3.42"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-[19px] text-t800 mb-2.5">Painting</h3>
+        <p class="text-[14.5px] leading-[1.7] text-t700/65">Interior and exterior painting with premium materials. Clean lines, proper prep, and a lasting finish every time.</p>
+        <p class="mt-4 text-[13px] font-heading font-semibold text-t500 flex items-center gap-1">Learn more <span aria-hidden="true" class="arrow">→</span></p>
+      </a>
+
+      <a href="doors-windows.html" class="svc reveal rd5 block border border-t100 rounded-[4px] p-8
+                  hover:-translate-y-1 hover:shadow-card-lg hover:border-transparent
+                  transition-[transform,box-shadow,border-color] duration-250">
+        <div class="w-12 h-12 bg-t100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-t500" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-[19px] text-t800 mb-2.5">Doors &amp; Windows</h3>
+        <p class="text-[14.5px] leading-[1.7] text-t700/65">Energy-efficient replacements that improve insulation, curb appeal, and security — installed right the first time.</p>
+        <p class="mt-4 text-[13px] font-heading font-semibold text-t500 flex items-center gap-1">Learn more <span aria-hidden="true" class="arrow">→</span></p>
+      </a>
+
+      <a href="general-repairs.html" class="svc reveal rd6 block border border-t100 rounded-[4px] p-8
+                  hover:-translate-y-1 hover:shadow-card-lg hover:border-transparent
+                  transition-[transform,box-shadow,border-color] duration-250">
+        <div class="w-12 h-12 bg-t100 rounded-xl flex items-center justify-center mb-5">
+          <svg class="w-6 h-6 text-t500" fill="none" stroke="currentColor" stroke-width="1.7" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l5.654-4.654m5.546-4.097a2.251 2.251 0 1 0-3.182-3.182 2.251 2.251 0 0 0 3.182 3.182Z"/>
+          </svg>
+        </div>
+        <h3 class="font-heading font-bold text-[19px] text-t800 mb-2.5">General Repairs</h3>
+        <p class="text-[14.5px] leading-[1.7] text-t700/65">Drywall, trim, flooring, and handyman services. No job too small — we keep your home in top condition year-round.</p>
+        <p class="mt-4 text-[13px] font-heading font-semibold text-t500 flex items-center gap-1">Learn more <span aria-hidden="true" class="arrow">→</span></p>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     HOW WE WORK
+══════════════════════════════════════════════ -->
+<section id="process" class="py-20 md:py-[80px] bg-t100">
+  <div class="max-w-[1200px] mx-auto px-6">
+
+    <div class="reveal text-center max-w-[580px] mx-auto mb-16">
+      <p class="text-[11px] font-body font-semibold tracking-[0.15em] uppercase text-or-aa mb-3">How We Work</p>
+      <h2 class="font-heading font-bold text-[36px] text-t800 leading-tight tracking-[-0.02em] mb-4">
+        A straightforward path from idea to finished
+      </h2>
+      <p class="text-[16px] leading-[1.75] text-t600/70">
+        No surprises, no runaround — here's what working with us looks like.
+      </p>
+    </div>
+
+    <div class="proc-row relative grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14">
+
+      <div class="reveal rd1 text-center group">
+        <div class="w-20 h-20 rounded-full bg-t800 text-white font-heading font-extrabold text-2xl
+                    flex items-center justify-center mx-auto mb-6
+                    border-4 border-white shadow-[0_6px_24px_rgba(15,45,61,0.18)]
+                    relative z-10
+                    group-hover:bg-t500 transition-[background-color] duration-300">01</div>
+        <h3 class="font-heading font-bold text-[17px] text-t800 mb-2.5">Free estimate</h3>
+        <p class="text-[14px] leading-[1.7] text-t700/65">We visit, talk through what you want, and give you a clear, no-pressure estimate for the work.</p>
+      </div>
+
+      <div class="reveal rd2 text-center group">
+        <div class="w-20 h-20 rounded-full bg-t800 text-white font-heading font-extrabold text-2xl
+                    flex items-center justify-center mx-auto mb-6
+                    border-4 border-white shadow-[0_6px_24px_rgba(15,45,61,0.18)]
+                    relative z-10
+                    group-hover:bg-t500 transition-[background-color] duration-300">02</div>
+        <h3 class="font-heading font-bold text-[17px] text-t800 mb-2.5">Plan &amp; agree</h3>
+        <p class="text-[14px] leading-[1.7] text-t700/65">Scope, materials, and timeline in writing, so you know exactly what's happening before we start.</p>
+      </div>
+
+      <div class="reveal rd3 text-center group">
+        <div class="w-20 h-20 rounded-full bg-t800 text-white font-heading font-extrabold text-2xl
+                    flex items-center justify-center mx-auto mb-6
+                    border-4 border-white shadow-[0_6px_24px_rgba(15,45,61,0.18)]
+                    relative z-10
+                    group-hover:bg-t500 transition-[background-color] duration-300">03</div>
+        <h3 class="font-heading font-bold text-[17px] text-t800 mb-2.5">Build it right</h3>
+        <p class="text-[14px] leading-[1.7] text-t700/65">As your licensed contractor, we manage the job from start to finish, and we don't consider it done until it's done properly.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     OUR WORK
+══════════════════════════════════════════════ -->
+<section id="work" class="py-20 md:py-[80px] bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+
+    <div class="reveal text-center max-w-[620px] mx-auto mb-14">
+      <p class="text-[11px] font-body font-semibold tracking-[0.15em] uppercase text-or-aa mb-3">Our Work</p>
+      <h2 class="font-heading font-bold text-[36px] text-t800 leading-tight tracking-[-0.02em] mb-4">
+        Real projects across DC &amp; Maryland
+      </h2>
+      <p class="text-[16px] leading-[1.75] text-t600/70">
+        A few of the jobs we've completed — described plainly, the way we'd tell a neighbor.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-[1fr_340px] gap-10 lg:gap-14 items-start">
+
+      <!-- Left: project list -->
+      <div class="reveal">
+        <ul class="flex flex-col divide-y divide-t100">
+
+          <li class="py-5 flex gap-4 items-start">
+            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-t800 text-white font-heading font-bold text-[11px]
+                         flex items-center justify-center mt-0.5">1</span>
+            <div>
+              <p class="font-heading font-semibold text-[15px] text-t800">Full kitchen remodel</p>
+              <p class="text-[13.5px] leading-[1.65] text-t700/65 mt-0.5">Taken to the studs and rebuilt, marble counters and all-new electrical &amp; plumbing. Northwest DC.</p>
+            </div>
+          </li>
+
+          <li class="py-5 flex gap-4 items-start">
+            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-t800 text-white font-heading font-bold text-[11px]
+                         flex items-center justify-center mt-0.5">2</span>
+            <div>
+              <p class="font-heading font-semibold text-[15px] text-t800">Three-bathroom renovation</p>
+              <p class="text-[13.5px] leading-[1.65] text-t700/65 mt-0.5">Wallpaper stripped, walls repaired and repainted across all three. Northwest DC.</p>
+            </div>
+          </li>
+
+          <li class="py-5 flex gap-4 items-start">
+            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-t800 text-white font-heading font-bold text-[11px]
+                         flex items-center justify-center mt-0.5">3</span>
+            <div>
+              <p class="font-heading font-semibold text-[15px] text-t800">Whole-home renovation</p>
+              <p class="text-[13.5px] leading-[1.65] text-t700/65 mt-0.5">Primary bedroom, new hardwood, multiple rooms and baths. Northwest DC.</p>
+            </div>
+          </li>
+
+          <li class="py-5 flex gap-4 items-start">
+            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-t800 text-white font-heading font-bold text-[11px]
+                         flex items-center justify-center mt-0.5">4</span>
+            <div>
+              <p class="font-heading font-semibold text-[15px] text-t800">Basement apartment conversion</p>
+              <p class="text-[13.5px] leading-[1.65] text-t700/65 mt-0.5">Full kitchen, bath, bedroom, and living room. Montgomery County, MD.</p>
+            </div>
+          </li>
+
+          <li class="py-5 flex gap-4 items-start">
+            <span class="flex-shrink-0 w-7 h-7 rounded-full bg-t800 text-white font-heading font-bold text-[11px]
+                         flex items-center justify-center mt-0.5">5</span>
+            <div>
+              <p class="font-heading font-semibold text-[15px] text-t800">Custom deck build</p>
+              <p class="text-[13.5px] leading-[1.65] text-t700/65 mt-0.5">Ground-up build with an integrated shed underneath. Montgomery County, MD.</p>
+            </div>
+          </li>
+
+        </ul>
+
+        <div class="mt-8">
+          <a href="our-work.html"
+             class="inline-flex items-center gap-2 px-7 py-3.5 bg-or-aa text-white font-heading font-bold rounded-[4px] text-[14px]
+                    hover:bg-or-dk hover:shadow-or
+                    active:scale-[0.97]
+                    transition-[background-color,box-shadow,transform] duration-200">
+            See all our work
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right: satisfaction panel -->
+      <div class="reveal rd1">
+        <div class="rounded-2xl overflow-hidden relative"
+             style="background:linear-gradient(135deg,#1A3D50 0%,#267A94 55%,#4AACBE 100%); min-height:320px;">
+          <div aria-hidden="true"
+               style="position:absolute;inset:0;opacity:0.06;
+                      background:repeating-linear-gradient(-45deg,#fff 0,#fff 1px,transparent 0,transparent 50%);
+                      background-size:24px 24px;"></div>
+          <div class="relative z-10 p-10 flex flex-col justify-center h-full text-center">
+            <div class="font-heading font-extrabold text-[64px] leading-none text-white mb-2">100%</div>
+            <div class="font-heading font-bold text-[18px] text-white/90 mb-4">Customer satisfaction</div>
+            <p class="text-[13.5px] leading-[1.7] text-white/60">
+              Most of our work comes from referrals and repeat clients. Verified customer reviews coming soon.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!--
+════════════════════════════════════════════════════════════════════════
+TESTIMONIALS TEMPLATE — paste real, verifiable customer quotes here and
+uncomment. Real reviews only — no fabricated quotes or star ratings.
+Do not uncomment until you have genuine, attributed reviews to display.
+════════════════════════════════════════════════════════════════════════
+
+<section class="py-20 md:py-[80px] bg-t100">
+  <div class="max-w-[1200px] mx-auto px-6">
+
+    <div class="reveal text-center max-w-[580px] mx-auto mb-14">
+      <p class="text-[11px] font-body font-semibold tracking-[0.15em] uppercase text-or-aa mb-3">What Clients Say</p>
+      <h2 class="font-heading font-bold text-[36px] text-t800 leading-tight tracking-[-0.02em] mb-4">
+        Customer reviews
+      </h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="tcard reveal rd1 relative bg-white border border-t100 rounded-[4px] p-8 shadow-card
+                  hover:shadow-card-lg transition-[box-shadow] duration-300">
+        <p class="text-[14.5px] leading-[1.75] text-t700/70 mb-6 italic">
+          "Paste verified customer quote here."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-t800 text-white font-heading font-bold text-base flex items-center justify-center flex-shrink-0"
+               aria-hidden="true">A</div>
+          <div>
+            <div class="font-heading font-semibold text-sm text-t800">Customer Name</div>
+            <div class="text-[12px] text-t700/50">City, State</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard reveal rd2 relative bg-white border border-t100 rounded-[4px] p-8 shadow-card
+                  hover:shadow-card-lg transition-[box-shadow] duration-300">
+        <p class="text-[14.5px] leading-[1.75] text-t700/70 mb-6 italic">
+          "Paste verified customer quote here."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-t800 text-white font-heading font-bold text-base flex items-center justify-center flex-shrink-0"
+               aria-hidden="true">B</div>
+          <div>
+            <div class="font-heading font-semibold text-sm text-t800">Customer Name</div>
+            <div class="text-[12px] text-t700/50">City, State</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tcard reveal rd3 relative bg-white border border-t100 rounded-[4px] p-8 shadow-card
+                  hover:shadow-card-lg transition-[box-shadow] duration-300">
+        <p class="text-[14.5px] leading-[1.75] text-t700/70 mb-6 italic">
+          "Paste verified customer quote here."
+        </p>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-t800 text-white font-heading font-bold text-base flex items-center justify-center flex-shrink-0"
+               aria-hidden="true">C</div>
+          <div>
+            <div class="font-heading font-semibold text-sm text-t800">Customer Name</div>
+            <div class="text-[12px] text-t700/50">City, State</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+-->
+
+
+<!-- ══════════════════════════════════════════════
+     FINAL CTA BAND
+══════════════════════════════════════════════ -->
+<div class="py-20 bg-t800 relative overflow-hidden">
+  <div aria-hidden="true"
+       class="absolute inset-0 opacity-[0.05]"
+       style="background-image: repeating-linear-gradient(-45deg, #fff 0, #fff 1px, transparent 0, transparent 50%); background-size: 24px 24px;"></div>
+  <div class="relative z-10 max-w-[720px] mx-auto px-6 text-center">
+    <h2 class="font-heading font-bold text-[36px] text-white leading-tight tracking-[-0.02em] mb-4">
+      Ready to start your project?
+    </h2>
+    <p class="text-[16px] leading-[1.75] text-white/65 mb-10 max-w-[520px] mx-auto">
+      Tell us what you're thinking and we'll set up a free, no-pressure estimate.
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a href="#contact"
+         class="px-8 py-4 bg-or-aa text-white font-heading font-bold rounded-[4px] text-[15px]
+                hover:bg-or-dk hover:shadow-or
+                active:scale-[0.97]
+                transition-[background-color,box-shadow,transform] duration-200">
+        Get a Free Estimate
+      </a>
+      <a href="tel:+13013431365"
+         class="px-8 py-4 border-2 border-white/25 text-white font-heading font-bold rounded-[4px] text-[15px]
+                hover:bg-white/10 hover:border-white/45
+                active:scale-[0.97]
+                transition-[background-color,border-color,transform] duration-200">
+        Call (301) 343-1365
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     CONTACT
+══════════════════════════════════════════════ -->
+<section id="contact" class="py-20 md:py-[80px] bg-white">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid lg:grid-cols-[1fr_1.3fr] gap-20 items-start">
+
+      <!-- Info -->
+      <div>
+        <p class="text-[11px] font-body font-semibold tracking-[0.15em] uppercase text-or-aa mb-3">Get In Touch</p>
+        <h2 class="font-heading font-bold text-[36px] text-t800 leading-tight tracking-[-0.02em] mb-5">
+          Let's Build<br>Something Great
+        </h2>
+        <p class="text-[16px] leading-[1.8] text-t700/70 mb-10">
+          Fill out the form and we'll get back to you within 24 hours with a
+          free, no-obligation estimate. Let's talk about your project.
+        </p>
+
+        <div class="flex flex-col gap-5">
+          <div class="flex items-center gap-4">
+            <div class="flex-shrink-0 w-11 h-11 bg-t100 rounded-[4px] flex items-center justify-center">
+              <svg class="w-5 h-5 text-t500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+            </div>
+            <div>
+              <div class="text-[10.5px] font-body font-semibold tracking-[0.1em] uppercase text-t600/60 mb-0.5">Phone</div>
+              <a href="tel:+13013431365" class="font-heading font-semibold text-t800 hover:text-t500 transition-colors duration-200">(301) 343-1365</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="flex-shrink-0 w-11 h-11 bg-t100 rounded-[4px] flex items-center justify-center">
+              <svg class="w-5 h-5 text-t500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+            </div>
+            <div>
+              <div class="text-[10.5px] font-body font-semibold tracking-[0.1em] uppercase text-t600/60 mb-0.5">Email</div>
+              <a href="mailto:gr.improve@gmail.com" class="font-heading font-semibold text-t800 hover:text-t500 transition-colors duration-200">gr.improve@gmail.com</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="flex-shrink-0 w-11 h-11 bg-t100 rounded-[4px] flex items-center justify-center">
+              <svg class="w-5 h-5 text-t500" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+            </div>
+            <div>
+              <div class="text-[10.5px] font-body font-semibold tracking-[0.1em] uppercase text-t600/60 mb-0.5">Service Area</div>
+              <span class="font-heading font-semibold text-t800">Washington DC &amp; Maryland</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Form embed -->
+      <div class="border border-t100 rounded-[4px] overflow-hidden shadow-card">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSfgh0w235zddW32FkRptwWEr4AlYKnt6yBzsSd3g3JXAP1LCA/viewform?embedded=true"
+          width="100%"
+          height="780"
+          frameborder="0"
+          marginheight="0"
+          marginwidth="0"
+          title="Free Estimate Request Form"
+          style="display:block;">
+          Loading form…
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+
+<!-- ══════════════════════════════════════════════
+     LICENSE VERIFICATION
+══════════════════════════════════════════════ -->
+<div class="bg-t100 border-t border-t200 py-10">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+
+      <!-- Maryland MHIC verify -->
+      <div class="text-center">
+        <a href="https://www.dllr.state.md.us/cgi-bin/ElectronicLicensing/OP_search/OP_search.cgi?calling_app=HIC::HIC_qselect"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Verify GR Inc. Improvements' license on the Maryland MHIC registry (opens in new tab)"
+           class="inline-flex items-center gap-2.5 px-7 py-3.5
+                  border-2 border-t600 text-t700 font-heading font-semibold text-[14px] rounded-[4px]
+                  hover:bg-t200 hover:border-t500 hover:text-t800
+                  active:scale-[0.97]
+                  transition-[background-color,border-color,color,transform] duration-200">
+          Verify our license with MHIC
+          <svg aria-hidden="true" class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+          </svg>
+        </a>
+        <p class="mt-2 text-[13px] text-t700/55 font-body">
+          Look up license #132077 on Maryland's official registry.
+        </p>
+      </div>
+
+      <!-- DC Scout verify -->
+      <div class="text-center">
+        <!-- DC_LICENSE_PENDING: replace "pending" with the real DC Basic Business License number before launch. DO NOT DEPLOY with the placeholder visible. -->
+        <a href="https://scout.dcra.dc.gov/"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Verify GR Inc. Improvements' DC license on the District's Scout registry (opens in new tab)"
+           class="inline-flex items-center gap-2.5 px-7 py-3.5
+                  border-2 border-t600 text-t700 font-heading font-semibold text-[14px] rounded-[4px]
+                  hover:bg-t200 hover:border-t500 hover:text-t800
+                  active:scale-[0.97]
+                  transition-[background-color,border-color,color,transform] duration-200">
+          Verify our DC license
+          <svg aria-hidden="true" class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"/>
+          </svg>
+        </a>
+        <p class="mt-2 text-[13px] text-t700/55 font-body">
+          Look up our license on the District's Scout registry.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer class="bg-t900 text-white/50 pt-16">
+  <div class="max-w-[1200px] mx-auto px-6">
+    <div class="grid md:grid-cols-2 lg:grid-cols-[1.8fr_1fr_1fr_1.2fr] gap-12 pb-14 border-b border-white/08">
+
+      <div>
+        <img src="brand_assets/GR_Improvements_Logo.PNG"
+             alt="GR Inc. Improvements"
+             class="h-[56px] w-auto bg-white rounded-lg p-2 mb-5" />
+        <p class="font-heading font-bold text-white text-[14px] mb-2">Built Right. Built to Last.</p>
+        <p class="text-[13.5px] leading-[1.75] max-w-[260px]">
+          Expert remodeling and construction services for homeowners across Washington DC and Maryland.
+        </p>
+        <!-- MHIC Badge -->
+        <a href="https://www.dllr.state.md.us/cgi-bin/ElectronicLicensing/OP_Search/OP_search.cgi?calling_app=HIC::HIC_registration_num"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-start gap-2.5 mt-5 p-3 rounded-[4px]
+                  border border-white/12 bg-white/[0.05]
+                  hover:bg-white/[0.09] hover:border-white/20
+                  transition-[background-color,border-color] duration-200
+                  max-w-[240px]">
+          <svg class="w-5 h-5 text-t400 flex-shrink-0 mt-px" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/>
+          </svg>
+          <div>
+            <p class="text-[11px] font-heading font-bold text-white/80 leading-tight">
+              Maryland Home Improvement Commission
+            </p>
+            <p class="text-[10.5px] font-body text-white/40 mt-0.5 leading-snug">
+              MHIC License #132077
+            </p>
+          </div>
+        </a>
+        <!-- DC Badge -->
+        <!-- DC_LICENSE_PENDING: replace "pending" with the real DC Basic Business License number before launch. DO NOT DEPLOY with the placeholder visible. -->
+        <a href="https://scout.dcra.dc.gov/"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="Verify GR Inc. Improvements' DC license on the District's Scout registry (opens in new tab)"
+           class="inline-flex items-start gap-2.5 mt-2 p-3 rounded-[4px]
+                  border border-white/12 bg-white/[0.05]
+                  hover:bg-white/[0.09] hover:border-white/20
+                  transition-[background-color,border-color] duration-200
+                  max-w-[240px]">
+          <svg class="w-5 h-5 text-t400 flex-shrink-0 mt-px" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z"/>
+          </svg>
+          <div>
+            <p class="text-[11px] font-heading font-bold text-white/80 leading-tight">
+              DC Department of Consumer &amp; Regulatory Affairs
+            </p>
+            <p class="text-[10.5px] font-body text-white/40 mt-0.5 leading-snug">
+              DC License # — pending
+            </p>
+          </div>
+        </a>
+      </div>
+
+      <div>
+        <h4 class="font-heading font-bold text-white text-[11px] tracking-[0.12em] uppercase mb-5">Services</h4>
+        <ul class="flex flex-col gap-2.5 text-[13.5px]">
+          <li><a href="kitchen-remodeling.html" class="hover:text-t400 transition-colors duration-200">Kitchen Remodeling</a></li>
+          <li><a href="bathroom-renovation.html" class="hover:text-t400 transition-colors duration-200">Bathroom Renovation</a></li>
+          <li><a href="basement-finishing.html"  class="hover:text-t400 transition-colors duration-200">Basement Finishing</a></li>
+          <li><a href="doors-windows.html"       class="hover:text-t400 transition-colors duration-200">Doors &amp; Windows</a></li>
+          <li><a href="painting.html"            class="hover:text-t400 transition-colors duration-200">Painting</a></li>
+          <li><a href="general-repairs.html"     class="hover:text-t400 transition-colors duration-200">General Repairs</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-heading font-bold text-white text-[11px] tracking-[0.12em] uppercase mb-5">Company</h4>
+        <ul class="flex flex-col gap-2.5 text-[13.5px]">
+          <li><a href="#process"      class="hover:text-t400 transition-colors duration-200">How We Work</a></li>
+          <li><a href="#work"         class="hover:text-t400 transition-colors duration-200">Our Work</a></li>
+          <li><a href="our-work.html" class="hover:text-t400 transition-colors duration-200">Project Gallery</a></li>
+          <li><a href="#contact"      class="hover:text-t400 transition-colors duration-200">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="font-heading font-bold text-white text-[11px] tracking-[0.12em] uppercase mb-5">Contact</h4>
+        <div class="flex flex-col gap-2.5 text-[13.5px] mb-6">
+          <p class="flex items-center gap-2">
+            <svg class="w-3.5 h-3.5 text-t400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+            (301) 343-1365
+          </p>
+          <p class="flex items-center gap-2">
+            <svg class="w-3.5 h-3.5 text-t400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+            gr.improve@gmail.com
+          </p>
+          <p class="flex items-center gap-2">
+            <svg class="w-3.5 h-3.5 text-t400 flex-shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/></svg>
+            Washington DC &amp; Maryland
+          </p>
+        </div>
+        <a href="#contact"
+           class="inline-flex px-5 py-2.5 bg-or-aa text-white font-heading font-bold text-[13px] rounded-[4px]
+                  hover:bg-or-dk hover:shadow-or
+                  active:scale-[0.97]
+                  transition-[background-color,box-shadow,transform] duration-200">
+          Get a Free Estimate
+        </a>
+      </div>
+
+    </div>
+    <div class="py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-[12.5px] text-white/30">
+      <p>&copy; 2026 GR Inc. Improvements. All rights reserved.</p>
+      <p>Licensed &amp; Insured &nbsp;·&nbsp; MHIC #132077 &nbsp;·&nbsp;<!-- DC_LICENSE_PENDING: replace "pending" with the real DC Basic Business License number before launch. DO NOT DEPLOY with the placeholder visible. --> DC # — pending &nbsp;·&nbsp; Serving DC &amp; Maryland</p>
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  // ── Sticky shadow ─────────────────────────────────────────
+  const hdr = document.getElementById('hdr');
+  window.addEventListener('scroll', () => {
+    hdr.style.boxShadow = window.scrollY > 20
+      ? '0 4px 24px rgba(15,45,61,0.10)' : '';
+  }, { passive: true });
+
+  // ── Mobile nav ────────────────────────────────────────────
+  const mbBtn  = document.getElementById('mb-btn');
+  const mbNav  = document.getElementById('mb-nav');
+  const mbOpen = document.getElementById('mb-open');
+  const mbCls  = document.getElementById('mb-close');
+
+  mbBtn.addEventListener('click', () => {
+    const open = mbNav.classList.toggle('hidden') === false;
+    mbOpen.classList.toggle('hidden', open);
+    mbCls.classList.toggle('hidden', !open);
+    mbBtn.setAttribute('aria-expanded', String(open));
+  });
+  mbNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mbNav.classList.add('hidden');
+    mbOpen.classList.remove('hidden');
+    mbCls.classList.add('hidden');
+    mbBtn.setAttribute('aria-expanded', 'false');
+  }));
+
+  // ── Scroll reveal ─────────────────────────────────────────
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+</script>
+
+</body>
+</html>
